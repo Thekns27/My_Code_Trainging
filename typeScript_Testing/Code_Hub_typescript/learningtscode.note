@@ -1,0 +1,211 @@
+/**
+ *  save place for testing coding
+ -----------------------------------
+ *  array
+let person = ["arkar", "jowel", "Kyaw Kyaw"];
+person.push("hla hla");
+//person.push(true);
+//console.log(person);
+
+let nums = [10, 20, 30, 40, 50];
+nums.push(60);
+console.log(nums);
+
+let mixed = ["arkar", "jowel", 10, 20, false];
+mixed.push("kyaw kyaw");
+mixed.push(30);
+mixed.push(true);
+//console.log(mixed);
+
+// object
+let team = {
+  name: "Thek",
+  password: false,
+  age: 20,
+};
+
+team.name = "coding";
+console.log(team);
+
+*/
+// Explicit Types
+
+let person: string;
+person = "arkar"
+person = "codehub"
+//person = true // error
+
+
+let num : number ;
+num = 21;
+//num = "10"  // error
+
+let bool : boolean ;
+bool = true ;
+bool = false ;
+// bool = "true"
+
+// array
+let worker : string[];
+worker = ["arkar"]
+
+let nums : number [];
+nums = [1,2,3];
+
+let bools : boolean[];
+bools = [true,false]
+
+// Union type
+let mixed : (boolean | string)[]
+mixed = [true,"kyaw kyaw"];
+
+// object
+let personOne : {
+    name : string ,
+    age : number ,
+    passed : boolean ,
+}
+personOne = {
+    name: "Aung Aung",
+    age: 21,
+    passed: true,
+}
+=============================================
+// any Type
+
+let person: any ;
+
+person = "arkar ";
+person = 10;
+person = true;
+// array
+let mixed : any [];
+mixed = ["codeHub", 10, true]
+====================================================
+// object
+let personOne : {
+    name: any,
+    age : any,
+    passed : any,
+}
+personOne = {
+    name :122,
+    age : 21 ,
+    passed : "true"
+}
+
+
+==================================================
+
+// basic function
+const add = (a: number, b: number, c?: number): void => {
+  console.log(a + b);
+};
+
+add(2, 4);
+
+const minus = (a: number, b: number): number => {
+  console.log(a - b);
+  return a - b;
+};
+minus(3, 2);
+
+let logger = (): void => {
+  console.log("I am logger function");
+};
+logger();
+
+let loggerTwo = (): void => {
+  console.log("i am logger function Two.");
+};
+
+loggerTwo();
+
+let loggerThree = (): void => {
+  console.log("i am logger function Three.");
+};
+
+loggerThree();
+============================================================
+
+// Tuple
+
+let strArr: (string | number)[] = ["1", "2", 3];
+let myTuple: [number, string, boolean, string];
+
+myTuple = [1, "str", true, "str2"];
+console.log(myTuple[3]);
+
+==============================================
+// extend / optional propert
+// Interface
+// obj ထက်ကောင်းတဲ့ obj လို့ ပြောလို့ရ  1 => extend လုပ်လို့ရ
+//                                 2 => optional properties
+// interface တစ်ခု တည်ဆောက်မယ်ဆို အရင်ဆုံး interface keywork လေး လိုအပ်ပါမယ်။
+
+
+/**
+ * လက်ရှိ ရှိနေပြီးသား interface ကို  feature ထပ်ထည့်မယ် ပြီးတော့
+    ရှိနေပြီးသားထဲ လဲ ထပ်မထည့် ချင်ရင် interface တစ်ခု ထပ်ခွဲပြီး ရေး
+ * ဒီလိုရေးတာ ကို reopen လုပ်တာ လို့လည်းခေါ်
+ * သူ့ကို ခေါ်သုံးထားတဲ့နေရာတွေမှာတော့ error တတ်နိုင်။
+ * obj ထဲက properties တွေကို override လုပ်နိုင်။
+ * override လုပ်မရအောင် class မှာရော  type မှာရော ကာကွယ်လို့ရတယ်။
+ * type မှာဆို readonly ဆိုတဲ့ keyword နဲ့ ကာကွယ်လို့ရ။
+
+ */
+ interface User {
+  name: string;
+  readonly email: string;
+  phone_number?: number;
+  // islogin : () => boolean;
+  islogin(): boolean;
+  getAge(age: number): number;
+}
+ interface User {
+  isDriving(status: boolean): string;
+}
+
+
+interface Editor extends User {
+  deleteUser(): string;
+}
+
+interface Admin extends User, Editor {
+  addUser(): string;
+}
+
+let userOne: User = {
+  name: "userOne",
+  email: "userOne.com",
+  islogin: () => {
+    return true;
+  },
+  getAge() {
+    return 20;
+  },
+  isDriving() {
+    return "userOne is Driving Now";
+  },
+};
+//userOne.email = "userOneHacked.com";
+//console.log(userOne.isDriving(true));
+console.log(userOne.email);
+
+let userTwo: User = {
+  name: "userTwo",
+  email: "userTwo.com",
+  islogin: () => {
+    return false;
+  },
+  getAge: () => {
+    return 22;
+  },
+  isDriving() {
+    return "userTwo is Driving 2min ago";
+  },
+};
+console.log(userTwo);
+// let adminOne : Admin = {
+
+// };
