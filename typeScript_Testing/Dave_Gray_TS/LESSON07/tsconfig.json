@@ -5,10 +5,9 @@
     "rootDir": "./src",
     "outDir": "./build/Js",
     "forceConsistentCasingInFileNames": true,
-
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
     "types": [],
     // For nodejs:
