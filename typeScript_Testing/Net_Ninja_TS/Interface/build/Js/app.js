@@ -1,5 +1,4 @@
 "use strict";
-//Interface
 Object.defineProperty(exports, "__esModule", { value: true });
 const authorOne = { name: 'morino', avatar: '/img/photo1.png' };
 const newPost = {

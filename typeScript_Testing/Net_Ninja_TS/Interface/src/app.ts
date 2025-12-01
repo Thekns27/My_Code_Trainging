@@ -1,5 +1,5 @@
-//Interface
 
+//Interface
 interface Author {
     name : string,
     avatar: string
@@ -7,6 +7,7 @@ interface Author {
 
 const authorOne : Author = {name: 'morino',avatar:'/img/photo1.png'}
 
+//Extending interface
 interface Post {
     title: string,
     body: string,
